@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "96858587802",
+    "project_id": "v-transaction",
+    "storage_bucket": "v-transaction.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96858587802:android:70690689735e7357ea5523",
+        "android_client_info": {
+          "package_name": "com.example.v_transaction"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8DhA0QzVz4L5w7TaY83A8-sWkKY4g4vI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
