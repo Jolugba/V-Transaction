@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_authentication"
+    app:startDestination="@+id/login_dest">
+
+
+    <fragment
+        android:id="@+id/login_dest"
+        android:name="com.example.v_transaction.auth.login.LoginFragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/go_to_sign_up"
+            app:destination="@id/signup_dest"
+             />
+    </fragment>
+    <fragment
+        android:id="@+id/signup_dest"
+        android:name="com.example.v_transaction.auth.signup.SignUpFragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/go_to_login"
+            app:destination="@id/login_dest"
+                        app:popUpTo="@id/login_dest"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+</navigation>

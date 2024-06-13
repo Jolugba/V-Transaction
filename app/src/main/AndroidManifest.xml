@@ -10,10 +10,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".base.MyApp"
         android:theme="@style/Theme.VTransaction"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".auth.AuthenticationActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/SplashTheme"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

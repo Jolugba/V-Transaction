@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingEnd="@dimen/dp_25"
+    android:paddingStart="@dimen/dp_25"
+    android:background="@color/loaderTranslucent"
+    android:backgroundTint="@color/loaderTranslucent"
+    android:gravity="center">
+        <ProgressBar
+            android:id="@+id/progressLoader"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_200" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.googleServices)
+    id("androidx.navigation.safeargs.kotlin")
+
 }
 
 android {
@@ -34,6 +36,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
+    ext {
+        set("safeArgsVersion", "2.7.7")
+    }
 }
 
 dependencies {
@@ -43,10 +51,16 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(platform(libs.firebase.bom))
-    //noinspection UseTomlInstead
-    implementation("com.google.firebase:firebase-auth")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(platform(libs.firebase.bom))
+    //noinspection UseTomlInstead
+    implementation("com.google.firebase:firebase-auth")
+    implementation(libs.hiltAndroid)
+    implementation (libs.androidx.core.splashscreen)
+    implementation(libs.androidx.navigation.fragment.ktx)
+   implementation( libs.androidx.navigation.ui.ktx)
+
 }
