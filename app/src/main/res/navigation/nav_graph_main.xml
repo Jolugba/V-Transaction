@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_authentication"
+    app:startDestination="@+id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.v_transaction.dashboard.ui.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/go_to_transferFragment"
+            app:destination="@id/transferFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transferFragment"
+        android:name="com.example.v_transaction.transaction.ui.TransferFragment"
+        android:label="TransferFragment" >
+        <action
+            android:id="@+id/go_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>

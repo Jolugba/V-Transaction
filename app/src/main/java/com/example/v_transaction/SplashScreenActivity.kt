@@ -9,6 +9,7 @@ import android.view.animation.AlphaAnimation
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.v_transaction.auth.AuthenticationActivity
+import com.example.v_transaction.dashboard.MainActivity
 import com.example.v_transaction.databinding.SplashActivityBinding
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,8 +33,6 @@ class SplashScreenActivity : AppCompatActivity() {
         binding.splashLogo.startAnimation(fadeIn)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, AuthenticationActivity::class.java)
-            startActivity(intent)
             checkUser()
         }, 3000)
     }

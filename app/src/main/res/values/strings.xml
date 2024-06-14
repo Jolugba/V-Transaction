@@ -2,6 +2,9 @@
     <string name="app_name">V-Transaction</string>
     <string name="splash_logo">Splash screen Logo</string>
     <string name="hey_there">Hey there! 👋</string>
+    <string name="good_morning_">Good Morning, <b>%s</b>👋</string>
+    <string name="good_afternoon_">Good Afternoon, %s 👋</string>
+    <string name="good_evening_">Good Evening, %s 👋</string>
     <string name="sign_in_to_continue">Sign in to continue.</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="don_t_have_an_account">Don’t have an account?</string>
@@ -14,7 +17,8 @@
     <string name="password">Password</string>
     <string name="send_link_to_email">Send link to email</string>
     <string name="enter_your_email_and_we_ll_send_you_a_link_to_reset_your_password">Enter your email and we’ll send you a\nlink to reset your password</string>
-
+    <string name="v_tier_3_account">V-tier 3 account</string>
+    <string name="transfer">Transfer</string>
 
 
 </resources>

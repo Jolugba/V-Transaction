@@ -17,6 +17,8 @@
              />
         <action
             android:id="@+id/action_login_dest_to_mainActivity"
+            app:popUpTo="@id/nav_graph_authentication"
+            app:popUpToInclusive="true"
             app:destination="@id/mainDest" />
         <action
             android:id="@+id/go_to_forgetPasswordFragment"
@@ -34,7 +36,7 @@
     </fragment>
     <activity
         android:id="@+id/mainDest"
-        android:name="com.example.v_transaction.MainActivity"
+        android:name="com.example.v_transaction.dashboard.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
     <fragment
