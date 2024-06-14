@@ -13,8 +13,8 @@ activity = "1.8.0"
 constraintlayout = "2.1.4"
 googleServices="4.4.2"
 hiltPlugin="2.48"
-hilt="2.39.1"
-safeArg="2.7.7"
+hilt="2.48"
+hiltNavigation="1.0.0"
 navigationFragmentKtx = "2.7.7"
 
 [libraries]
@@ -24,7 +24,7 @@ androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fr
 androidx-navigation-safe-args-gradle-plugin = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
-hiltAndroid= { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hiltAndroid= { module = "com.google.dagger:hilt-android", version.ref = "hiltPlugin" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -32,13 +32,17 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hilt" }
+hilt_android_compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+hilt_navigation_fragment = { module = "androidx.hilt:hilt-navigation-fragment", version.ref = "hiltNavigation" }
+hilt_compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltNavigation" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 googleServices = { id = "com.google.gms.google-services", version.ref = "googleServices" }
 hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "hiltPlugin" }
-safeArg = { id = "androidx.navigation.safeargs.kotlin", version.ref = "safeArg" }
+
 
 
 

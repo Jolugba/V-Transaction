@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 
 abstract class ViewBindingFragment<VB : ViewBinding> : Fragment() {
-    private var _binding: VB? = null
+   protected var _binding: VB? = null
     protected val binding get() = _binding!!
 
     @get:LayoutRes

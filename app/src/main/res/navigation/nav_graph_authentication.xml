@@ -9,22 +9,41 @@
 
     <fragment
         android:id="@+id/login_dest"
-        android:name="com.example.v_transaction.auth.login.LoginFragment"
+        android:name="com.example.v_transaction.auth.login.ui.LoginFragment"
         tools:layout="@layout/login_fragment">
         <action
             android:id="@+id/go_to_sign_up"
             app:destination="@id/signup_dest"
              />
+        <action
+            android:id="@+id/action_login_dest_to_mainActivity"
+            app:destination="@id/mainDest" />
+        <action
+            android:id="@+id/go_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/signup_dest"
-        android:name="com.example.v_transaction.auth.signup.SignUpFragment"
-        tools:layout="@layout/login_fragment">
+        android:name="com.example.v_transaction.auth.signup.ui.SignUpFragment"
+        tools:layout="@layout/signup_fragment">
         <action
             android:id="@+id/go_to_login"
             app:destination="@id/login_dest"
-                        app:popUpTo="@id/login_dest"
+            app:popUpTo="@id/login_dest"
             app:popUpToInclusive="true" />
+    </fragment>
+    <activity
+        android:id="@+id/mainDest"
+        android:name="com.example.v_transaction.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.example.v_transaction.auth.login.ui.ForgetPasswordFragment"
+        android:label="ForgetPasswordFragment" >
+        <action
+            android:id="@+id/action_forgetPasswordFragment_to_login_dest"
+            app:destination="@id/login_dest" />
     </fragment>
 
 

@@ -70,7 +70,7 @@
             app:passwordToggleEnabled="true">
 
             <EditText
-                android:id="@+id/password_edit_text2"
+                android:id="@+id/password_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
@@ -85,7 +85,7 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_login"
+            android:id="@+id/signUpButton"
             android:layout_width="@dimen/dp_0"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -111,7 +111,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/signIn"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+            app:layout_constraintTop_toBottomOf="@+id/signUpButton" />
 
         <TextView
             android:id="@+id/signIn"

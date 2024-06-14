@@ -3,7 +3,8 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.googleServices)
     id("androidx.navigation.safeargs.kotlin")
-
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
 }
 
 android {
@@ -42,6 +43,15 @@ android {
     ext {
         set("safeArgsVersion", "2.7.7")
     }
+    kapt {
+        correctErrorTypes = true
+    }
+    packagingOptions {
+        resources {
+            excludes += "META-INF/gradle/incremental.annotation.processors"
+        }
+    }
+
 }
 
 dependencies {
@@ -59,8 +69,10 @@ dependencies {
     //noinspection UseTomlInstead
     implementation("com.google.firebase:firebase-auth")
     implementation(libs.hiltAndroid)
+    implementation(libs.hilt.android.compiler)
+    kapt(libs.hilt.compiler)
     implementation (libs.androidx.core.splashscreen)
     implementation(libs.androidx.navigation.fragment.ktx)
-   implementation( libs.androidx.navigation.ui.ktx)
+    implementation( libs.androidx.navigation.ui.ktx)
 
 }
