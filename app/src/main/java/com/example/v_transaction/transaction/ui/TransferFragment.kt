@@ -42,9 +42,6 @@ class TransferFragment : ViewBindingFragment<FragmentTransferBinding>() {
                 val sourceAccountId = binding.sourceAccount.selectedItemId.toInt().plus(1)
                 val destinationAccountId = binding.destinationAccount.selectedItemId.toInt().plus(1)
                 val amount = binding.transferAmountEditText.text.toString().toDoubleOrNull() ?: 0.0
-
-                Log.e("TransferFragment", "Source Account ID: $sourceAccountId, Destination Account ID: $destinationAccountId, Amount: $amount")
-
                 viewModel.transferMoney(sourceAccountId, destinationAccountId, amount)
             }
     }

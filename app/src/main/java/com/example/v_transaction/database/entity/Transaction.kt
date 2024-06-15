@@ -8,6 +8,8 @@ data class Transaction(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val sourceAccountId: Int,
     val destinationAccountId: Int,
+    val sourceAccountName: String,
+    val destinationAccountName: String,
     val amount: Double,
     val timestamp: Long
 )

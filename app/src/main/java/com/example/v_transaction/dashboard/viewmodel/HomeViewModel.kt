@@ -25,7 +25,6 @@ class HomeViewModel @Inject constructor(val firebaseAuth: FirebaseAuth,val datab
     val accounts: LiveData<List<AccountHolder>> = accountDao.getAllAccounts()
 
     val transactions: LiveData<List<Transaction>> = transactionDao.getAllTransactions()
-    private val _viewState = MutableLiveData<ViewState>()
 init {
     getUserAccountHolders()
 }
@@ -46,7 +45,6 @@ init {
                 return@runIO
             }
 
-            // Set loading state to true initially
             _state.postValue(ViewState.Loading(true))
 
             try {
@@ -72,24 +70,24 @@ init {
                             id = 0,
                             sourceAccountId = sourceId,
                             destinationAccountId = destinationId,
+                            destinationAccountName = destinationAccount.name,
+                            sourceAccountName = sourceAccount.name,
                             amount = amount,
                             timestamp = System.currentTimeMillis()
                         )
                         transactionDao.insert(transaction)
-
-                        // **Success message with fixed typo**
                         _state.postValue(ViewState.Success("Transaction successful"))
                         Log.e("HomeViewModel", "Transaction successful")
 
                     } catch (e: Exception) {
                         _state.postValue(ViewState.Error("Transaction failed: ${e.message}"))
-                        Log.e("HomeViewModel", "Transaction failed: ${e.message}", e) // Log the exception for debugging
+                        Log.e("HomeViewModel", "Transaction failed: ${e.message}", e)
                     }
                 } else {
                     _state.postValue(ViewState.Error("Insufficient balance in source account"))
                 }
             } catch (e: Exception) {
-                Log.e("HomeViewModel", "Transaction failed: ${e.message}", e) // Log the exception for debugging
+                Log.e("HomeViewModel", "Transaction failed: ${e.message}", e)
                 _state.postValue(ViewState.Error("Transaction failed: ${e.message}"))
             } finally {
                 Log.e("HomeViewModel", "Setting Loading to false")

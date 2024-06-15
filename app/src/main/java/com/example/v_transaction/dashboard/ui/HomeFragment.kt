@@ -39,6 +39,9 @@ class HomeFragment : ViewBindingFragment<FragmentHomeBinding>() {
          initial = viewModel.getUserDetails()
         greetingText()
         with(binding){
+            historyButton.setOnClickListener {
+                launchFragment(HomeFragmentDirections.actionHomeFragmentToTransferHistoryFragment())
+            }
            accountHolderTextView.text=initial
             transferMoney.setOnClickListener {
                 launchFragment(HomeFragmentDirections.goToTransferFragment())
