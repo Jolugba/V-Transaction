@@ -23,10 +23,38 @@ V-Transaction is an Android application that simulates the transfer of money bet
 - Build and run the app on an emulator or physical device.
 
 ## Screenshots and Demo
+## Splash Screen
 ![Splash Screen](https://github.com/Jolugba/V-Transaction/assets/52603037/f8d26955-22af-4eb6-bba0-8b6675d22a05)
-![Screenshot_20240614_182639](https://github.com/Jolugba/V-Transaction/assets/52603037/15f6adb7-4553-4302-9890-191d54a0b02e)
-![Screenshot_20240614_182656](https://github.com/Jolugba/V-Transaction/assets/52603037/01596bbc-dffd-4f47-afb3-6d5efdfe8f4c)
-![Screenshot_20240614_182713](https://github.com/Jolugba/V-Transaction/assets/52603037/57a85658-bfb5-48b4-8fe7-fd04d2064cd8)
+
+## Authentication Screens
+
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/Jolugba/V-Transaction/assets/52603037/15f6adb7-4553-4302-9890-191d54a0b02e" width="300"/>
+      <br/>
+      <p align="center">Caption for Image 1</p>
+    </td>
+    <td>
+      <img src="https://github.com/Jolugba/V-Transaction/assets/52603037/01596bbc-dffd-4f47-afb3-6d5efdfe8f4c" width="300"/>
+      <br/>
+      <p align="center">Caption for Image 2</p>
+    </td>
+    <td>
+      <img src="https://github.com/Jolugba/V-Transaction/assets/52603037/57a85658-bfb5-48b4-8fe7-fd04d2064cd8" width="300"/>
+      <br/>
+      <p align="center">Caption for Image 3</p>
+    </td>
+  </tr>
+</table>
+
+
+## Home Screen
+![Screenshot_20240614_182806](https://github.com/Jolugba/V-Transaction/assets/52603037/3a46a052-dded-4673-a417-d13396a23684)
+##
+
+
+
 
 
 
