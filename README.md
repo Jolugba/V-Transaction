@@ -8,6 +8,7 @@ V-Transaction is an Android application that simulates the transfer of money bet
 - Account Management with mock data
 - Money Transfer
 - Transaction History
+  
 ## Tools and Libraries Used
 - Firebase Authentication
 - RecyclerView
@@ -15,6 +16,10 @@ V-Transaction is an Android application that simulates the transfer of money bet
 - LiveData
 - ViewModel
 - Architecture: MVVM (Model-View-ViewModel)
+## Architecture 
+- I used MVVM architecture
+- I leveraged on constraint Layout to avoid nested layouts which can cause UI jank
+- I leveraged on kotlin hilt,kotlin extension and MVVM guidelines to ensure separation of concerns whichmakes the application is scalable, testable and mainainable
 
 ## Testing
 - Setup and Run
@@ -23,10 +28,10 @@ V-Transaction is an Android application that simulates the transfer of money bet
 - Build and run the app on an emulator or physical device.
 
 ## Screenshots and Demo
-## Splash Screen
+### Splash Screen
 ![Splash Screen](https://github.com/Jolugba/V-Transaction/assets/52603037/f8d26955-22af-4eb6-bba0-8b6675d22a05)
 
-## Authentication Screens
+### Authentication Screens
 
 <table>
   <tr>
@@ -49,7 +54,7 @@ V-Transaction is an Android application that simulates the transfer of money bet
 </table>
 
 
-## Home Screen
+### Home Screen
 
 <table>
   <tr>
@@ -66,7 +71,7 @@ V-Transaction is an Android application that simulates the transfer of money bet
   </tr>
 </table>
 
-## Transaction Screen
+### Transaction Screen
 <table>
   <tr>
     <td>
@@ -82,7 +87,7 @@ V-Transaction is an Android application that simulates the transfer of money bet
   </tr>
 </table>
 
-## Error and Other Screens
+### Error and Other Screens
 
 <table>
   <tr>
@@ -98,17 +103,6 @@ V-Transaction is an Android application that simulates the transfer of money bet
     </td>
   </tr>
 </table>
-
-
-
-
-
-
-
-
-
-
-
 
 ## Notes
 This app uses mock data for simulation purposes only.
