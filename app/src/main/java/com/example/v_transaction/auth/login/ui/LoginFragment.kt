@@ -3,7 +3,6 @@ package com.example.v_transaction.auth.login.ui
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,12 +38,10 @@ class LoginFragment : ViewBindingFragment<LoginFragmentBinding>() {
         observe(viewModel.state) { state ->
             when (state) {
                 is ViewState.USER -> {
-                    Log.e("User", "user${state.user}")
                     launchFragment(R.id.action_login_dest_to_mainActivity)
                 }
 
                 is ViewState.ERROR -> {
-                    Log.e("Error", "error${state.errorMessage}")
                     binding.emailInputLayout.error = null
                     binding.passwordInputLayout.error = null
 
@@ -77,7 +74,6 @@ class LoginFragment : ViewBindingFragment<LoginFragmentBinding>() {
             btnLogin.setOnClickListener {
                 val email = binding.emailEditText.text.toString()
                 val password = binding.passwordEditText.text.toString()
-                Log.e("error", "$email,$password")
                 viewModel.signIn(email = email, password = password)
             }
 

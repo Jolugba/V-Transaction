@@ -1,6 +1,5 @@
 package com.example.v_transaction.auth.signup.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -30,7 +29,6 @@ class SignUpViewModel @Inject constructor(
                 .addOnCompleteListener { task ->
                     state.value = ViewState.LOADING(false)
                     if (task.isSuccessful) {
-                        // Sign up success
                         val firebaseUser = task.result?.user
                         if (firebaseUser != null) {
                             val user = User(
@@ -39,8 +37,6 @@ class SignUpViewModel @Inject constructor(
                             state.value = ViewState.USER(user)
                         }
                     } else {
-                        // Sign up failure
-                        Log.e("error", "${task.exception?.message}")
                         state.value =
                             ViewState.ERROR("${task.exception?.message}.", "signup")
                     }

@@ -1,7 +1,6 @@
 package com.example.v_transaction.dashboard.viewmodel
 
 import DummyData
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -40,12 +39,15 @@ init {
 
     fun transferMoney(sourceId: Int, destinationId: Int, amount: Double) {
         runIO {
-            if (amount <= 0 || amount < 10) {
+            val isValidAmount = amount >= 10
+            val areAccountsDifferent = sourceId != destinationId
+
+            if (!isValidAmount) {
                 _state.postValue(ViewState.Error("Invalid amount. Amount must be greater than or equal to 10."))
                 return@runIO
             }
 
-            if (sourceId == destinationId) {
+            if (!areAccountsDifferent) {
                 _state.postValue(ViewState.Error("Source and destination accounts cannot be the same."))
                 return@runIO
             }
@@ -56,48 +58,53 @@ init {
                 val sourceAccount = accountDao.getAccountById(sourceId)
                 val destinationAccount = accountDao.getAccountById(destinationId)
 
-                Log.d("HomeViewModel", "Source Account: $sourceAccount, Destination Account: $destinationAccount")
-
                 if (sourceAccount == null || destinationAccount == null) {
                     _state.postValue(ViewState.Error("Invalid account selected"))
                     return@runIO
                 }
 
                 if (sourceAccount.balance >= amount) {
-                    try {
-                        sourceAccount.balance -= amount
-                        destinationAccount.balance += amount
-
-                        accountDao.update(sourceAccount)
-                        accountDao.update(destinationAccount)
-
-                        val transaction = Transaction(
-                            id = 0,
-                            sourceAccountId = sourceId,
-                            destinationAccountId = destinationId,
-                            destinationAccountName = destinationAccount.name,
-                            sourceAccountName = sourceAccount.name,
-                            amount = amount,
-                            timestamp = System.currentTimeMillis()
-                        )
-                        transactionDao.insert(transaction)
-                        _state.postValue(ViewState.Success("Transaction successful"))
-                        Log.e("HomeViewModel", "Transaction successful")
-
-                    } catch (e: Exception) {
-                        _state.postValue(ViewState.Error("Transaction failed: ${e.message}"))
-                        Log.e("HomeViewModel", "Transaction failed: ${e.message}", e)
-                    }
+                    performTransaction(
+                        sourceAccount = sourceAccount,
+                        destinationAccount = destinationAccount,
+                        amount = amount
+                    )
                 } else {
                     _state.postValue(ViewState.Error("Insufficient balance in source account"))
                 }
             } catch (e: Exception) {
-                Log.e("HomeViewModel", "Transaction failed: ${e.message}", e)
                 _state.postValue(ViewState.Error("Transaction failed: ${e.message}"))
             } finally {
-                Log.e("HomeViewModel", "Setting Loading to false")
                 _state.postValue(ViewState.Loading(false))
             }
+        }
+    }
+
+    private suspend fun performTransaction(
+        sourceAccount: AccountHolder,
+        destinationAccount: AccountHolder,
+        amount: Double
+    ) {
+        try {
+            sourceAccount.balance -= amount
+            destinationAccount.balance += amount
+
+            accountDao.update(sourceAccount)
+            accountDao.update(destinationAccount)
+
+            val transaction = Transaction(
+                id = 0,
+                sourceAccountId = sourceAccount.id,
+                destinationAccountId = destinationAccount.id,
+                destinationAccountName = destinationAccount.name,
+                sourceAccountName = sourceAccount.name,
+                amount = amount,
+                timestamp = System.currentTimeMillis()
+            )
+            transactionDao.insert(transaction)
+            _state.postValue(ViewState.Success("Transaction successful"))
+        } catch (e: Exception) {
+            _state.postValue(ViewState.Error("Transaction failed: ${e.message}"))
         }
     }
 

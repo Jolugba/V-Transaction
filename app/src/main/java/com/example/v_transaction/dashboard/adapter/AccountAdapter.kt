@@ -1,5 +1,6 @@
 package com.example.v_transaction.dashboard.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -24,6 +25,7 @@ class AccountAdapter : ListAdapter<AccountHolder, AccountAdapter.AccountViewHold
 
     class AccountViewHolder(private val binding: AccountHolderItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(account: AccountHolder) = with(binding){
             userName.text = account.name
             userImage.loadCircleImageFromUri(account.profileImageResId)

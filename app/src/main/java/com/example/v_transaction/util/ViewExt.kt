@@ -6,6 +6,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.example.v_transaction.R
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 /**
  * Convenience function to hide View
@@ -34,6 +37,11 @@ fun ImageView.loadCircleImageFromUri(imageUrl: Int) {
         .centerCrop()
         .error(R.drawable.ic_error)
         .into(this)
+}
+fun Long.formatDate():String{
+    return SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(
+        Date(this)
+    )
 }
 
 

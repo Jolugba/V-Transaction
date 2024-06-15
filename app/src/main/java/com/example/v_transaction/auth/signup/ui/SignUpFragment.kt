@@ -3,7 +3,6 @@ package com.example.v_transaction.auth.signup.ui
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,12 +37,10 @@ class SignUpFragment : ViewBindingFragment<SignupFragmentBinding>() {
         observe(viewModel.state) { state ->
             when (state) {
                 is ViewState.USER -> {
-                    Log.e("User", "user${state.user}")
                     launchFragment(R.id.mainDest)
                 }
 
                 is ViewState.ERROR -> {
-                    Log.e("Error", "error${state.errorMessage}")
                     binding.emailInputLayout.error = null
                     binding.passwordInputLayout.error = null
 
@@ -74,7 +71,6 @@ class SignUpFragment : ViewBindingFragment<SignupFragmentBinding>() {
             signUpButton.setOnClickListener {
                 val email = binding.emailEditText.text.toString()
                 val password = binding.passwordEditText.text.toString()
-                Log.e("error", "$email,$password")
                 viewModel.signUp(email = email, password = password)
             }
 
