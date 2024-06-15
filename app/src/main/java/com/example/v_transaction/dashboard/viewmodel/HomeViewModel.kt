@@ -45,6 +45,11 @@ init {
                 return@runIO
             }
 
+            if (sourceId == destinationId) {
+                _state.postValue(ViewState.Error("Source and destination accounts cannot be the same."))
+                return@runIO
+            }
+
             _state.postValue(ViewState.Loading(true))
 
             try {
@@ -95,6 +100,7 @@ init {
             }
         }
     }
+
 
 
 
