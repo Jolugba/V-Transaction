@@ -18,6 +18,7 @@ import com.example.v_transaction.util.observe
 import com.example.v_transaction.util.showErrorDialog
 import com.example.v_transaction.util.showLongSnackBar
 import com.example.v_transaction.util.toggleVisibility
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -74,8 +75,25 @@ class TransferFragment : ViewBindingFragment<FragmentTransferBinding>() {
                 is ViewState.Error -> {
                     showErrorDialog(state.errorMessage)
                 }
+                is ViewState.Confirm -> {
+                    // Show a confirmation dialog
+                    showConfirmationDialog(state.message)
+                }
             }
         }
+    }
+    private fun showConfirmationDialog(message: String) {
+       MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Confirm Transfer")
+            .setMessage(message)
+            .setPositiveButton("Confirm") { dialog, _ ->
+                dialog.dismiss()
+                viewModel.onTransferConfirmed()
+            }
+            .setNegativeButton("Cancel") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 
 

@@ -29,7 +29,7 @@ class AccountAdapter : ListAdapter<AccountHolder, AccountAdapter.AccountViewHold
         fun bind(account: AccountHolder) = with(binding){
             userName.text = account.name
             userImage.loadCircleImageFromUri(account.profileImageResId)
-            accountBalance.text = "$ ${account.balance}".format("%.2f")
+            accountBalance.text = "$ ${String.format("%.2f", account.balance)}"
             accountNumber.text="Acc.no ${account.accountNumber}"
         }
     }
