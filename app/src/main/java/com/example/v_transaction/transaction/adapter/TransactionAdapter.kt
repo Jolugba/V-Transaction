@@ -31,7 +31,7 @@ class TransactionAdapter(private val transactions: List<Transaction>) :
         val transaction = transactions[position]
         holder.sourceAccount.text = "Debit Alert to ${transaction.destinationAccountName}"
         holder.destinationAccount.text = "Credit Alert from ${transaction.sourceAccountName}"
-        holder.amount.text = transaction.amount.toString()
+        holder.amount.text ="$ ${transaction.amount}"
         holder.timestamp.text = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(
             Date(transaction.timestamp)
         )
