@@ -33,25 +33,76 @@ V-Transaction is an Android application that simulates the transfer of money bet
     <td>
       <img src="https://github.com/Jolugba/V-Transaction/assets/52603037/15f6adb7-4553-4302-9890-191d54a0b02e" width="300"/>
       <br/>
-      <p align="center">Caption for Image 1</p>
+      <p align="center">Sign Up Screen</p>
     </td>
     <td>
       <img src="https://github.com/Jolugba/V-Transaction/assets/52603037/01596bbc-dffd-4f47-afb3-6d5efdfe8f4c" width="300"/>
       <br/>
-      <p align="center">Caption for Image 2</p>
+      <p align="center">Sign In Screen</p>
     </td>
     <td>
       <img src="https://github.com/Jolugba/V-Transaction/assets/52603037/57a85658-bfb5-48b4-8fe7-fd04d2064cd8" width="300"/>
       <br/>
-      <p align="center">Caption for Image 3</p>
+      <p align="center">Forget Password</p>
     </td>
   </tr>
 </table>
 
 
 ## Home Screen
-![Screenshot_20240614_182806](https://github.com/Jolugba/V-Transaction/assets/52603037/3a46a052-dded-4673-a417-d13396a23684)
-##
+
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/Jolugba/V-Transaction/assets/52603037/3a46a052-dded-4673-a417-d13396a23684" width="300"/>
+      <br/>
+      <p align="center">Home Screen1</p>
+    </td>
+    <td>
+      <img src="https://github.com/Jolugba/V-Transaction/assets/52603037/0c14e171-4a28-4737-a372-aed3993147b0" width="300"/>
+      <br/>
+      <p align="center">Home Screen 2</p>
+    </td>
+  </tr>
+</table>
+
+## Transaction Screen
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/Jolugba/V-Transaction/assets/52603037/fa1339d9-501c-4dda-8077-6cdbc2054e71" width="300"/>
+      <br/>
+      <p align="center">No Transaction Screen</p>
+    </td>
+    <td>
+      <img src="https://github.com/Jolugba/V-Transaction/assets/52603037/76993cb1-8213-4b1b-8cc2-a5f334e3125e" width="300"/>
+      <br/>
+      <p align="center">Transaction History Screen</p>
+    </td>
+  </tr>
+</table>
+
+## Error and Other Screens
+
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/Jolugba/V-Transaction/assets/52603037/7a6407ee-f270-4b2c-a162-14fa5d40c17d" width="300"/>
+      <br/>
+      <p align="center">Error Dialog</p>
+    </td>
+    <td>
+      <img src="https://github.com/Jolugba/V-Transaction/assets/52603037/0c8710b0-03b1-4a36-a33d-49cebc153d4b" width="300"/>
+      <br/>
+      <p align="center">Other Screen</p>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
 
 
 
